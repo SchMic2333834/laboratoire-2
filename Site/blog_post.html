@@ -11,10 +11,10 @@
     <link rel="stylesheet" href="styles.css">
 
 </head>
-<body>
+<body onload="fetchBlogPost()">
     <nav class="navbar navbar-expand-md navbar-dark py-0 d-flex">
         <div class="py-0 d-flex flex-grow-1 flex-md-grow-0">
-          <a class="navbar-brand d-flex align-items-center justify-content-center w-100;" href="#">
+          <a class="navbar-brand d-flex align-items-center justify-content-center w-100;" href="index.html">
               <img class="img-fluid" src="images/logo.png" alt="uwu">
           </a>
           <div class="d-flex flex-grow-1 flex-md-grow-0">
@@ -25,7 +25,7 @@
         </div>        
         <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto d-flex justify-content-evenly align-items-center w-100 h-100">
-            <li class="nav-item active w-100 h-100"><a class="nav-link h-100 d-flex align-items-center justify-content-center" href="menu1.html">Menu1</a></li>
+            <li class="nav-item active w-100 h-100"><a class="nav-link h-100 d-flex align-items-center justify-content-center" href="index.html">Menu1</a></li>
             <li class="nav-item w-100 h-100"><a class="nav-link h-100 d-flex align-items-center justify-content-center" href="menu2.html">Menu2</a></li>
             <li class="nav-item w-100 h-100"><a class="nav-link h-100 d-flex align-items-center justify-content-center" href="menu3.html">Menu3</a></li>
             <li class="nav-item w-100 h-100"><a class="nav-link h-100 d-flex align-items-center justify-content-center" href="menu4.html">Menu4</a></li>
@@ -35,51 +35,25 @@
       </nav>
 
     <div class="container d-flex flex-column py-3">
-        <h1>Lorem ipsum dolor sit amet</h1>
-        <p class="text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem maiores non id quam. Quam cumque facere aut ut ad delectus fugit alias molestiae. Facilis maxime enim tenetur maiores veritatis. Enim! Lorem ipsum dolor sit amet consectetur adipisicing elit. In delectus aliquid eveniet laudantium, recusandae hic, nesciunt suscipit iure facere, dolorem quibusdam! Illum ea modi obcaecati, corrupti esse fugiat molestias amet? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore saepe animi voluptatum hic, reiciendis quis eum a quasi qui aspernatur non, sapiente pariatur at beatae fugiat id ipsa, praesentium dolorum. <br> <br> <br>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, repellendus. Vel nam quos, est perspiciatis veniam voluptate fugit hic numquam sint? Placeat iure necessitatibus possimus ipsam commodi dignissimos similique ipsum? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere exercitationem error quo reiciendis sapiente autem eum nobis architecto voluptates magni quod impedit unde, modi illo placeat laboriosam earum vel tempora. Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit asperiores fugiat pariatur! Optio inventore consequatur corporis voluptate a vel voluptates velit sed consectetur accusantium? Voluptatibus aperiam reiciendis repudiandae atque nemo? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium explicabo inventore autem quis tempora esse aut, recusandae soluta quasi fugit at dicta porro excepturi voluptas ea officia ab dignissimos saepe. Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores numquam nulla soluta vitae ipsum architecto, porro quo animi iste laboriosam pariatur, adipisci sed est doloremque blanditiis molestias, eligendi totam fugiat.
-        </p>
-        <figure class="figure d-flex justify-content-evenly align-items-center flex-column w-100 my-4">
-            <img src="images/placeholder.webp" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-            <figcaption class="figure-caption">A caption for the above image.</figcaption>
-        </figure>
-
-        <p class="text-justify">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae consequatur distinctio reiciendis cupiditate maiores sequi sit ex mollitia, temporibus nostrum? Magni, adipisci autem perspiciatis id ipsam vel iure magnam totam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt esse reprehenderit est porro placeat odio, ducimus voluptate similique dolores commodi expedita tenetur dolorum. Obcaecati, explicabo a? Maxime adipisci quis earum.
-        </p>
+      <div id="blogPost">
+        
+      </div>
+        
         <div class="container d-flex flex-row"></div>
             <h2>
                 Commentaires
             </h2>
             <div class="d-flex flex-wrap justify-content-end">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                <button type="submit" class="btn custom-btn mb-3 my-2">Envoyer</button>
-            </div>
-            <div class="container-fluid d-flex flex-column my-2 px-0">
-                <div class="container-fluid d-flex flex-column my-2 px-0 align-items-end" id="comment">
-                    <div class="card d-flex flex-row flex-wrap">
-                        <div class="card-body d-flex flex-row">
-                            <img src="images/person-circle.svg" class="img-fluid mx-3" alt="">
-                            <p class="w-100 text-justify">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente molestias voluptates animi architecto totam hic vitae. Numquam itaque minima at enim accusamus accusantium, error, necessitatibus culpa id, reprehenderit ab illum!</p>
-                    
-                        </div>
-                    </div>
-                        <div class="card d-flex flex-row justify-content-end my-2 px-0 col-10">
-                            <div class="card-body d-flex flex-row">
-                                <img src="images/person-circle.svg" class="img-fluid mx-3" alt="">
-                                <p class="w-100 text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, quia.</p>
-                            </div>
-                        
-                        </div>
-                    </div>
-                
-                    
-                </div>
-                
-            </div>
+              <textarea class="form-control" id="commentContent" rows="3"></textarea>
+              <button type="submit" class="btn custom-btn mb-3 my-2" id="submitCommentBtn">Envoyer</button>
+          </div>
+          <div class="container-fluid d-flex flex-column my-2 px-0" id="comments">
+          
+          </div>
             
       
         </div>
+      </div>
     <footer>
       <div class="container text-center">
         <div class="d-flex justify-content-center gap-5 mb-3">
@@ -103,8 +77,9 @@
         <p>2025</p>
       </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" integrity="sha256-AlTido85uXPlSyyaZNsjJXeCs07eSv3r43kyCVc8ChI=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
     </body>
 </html>
